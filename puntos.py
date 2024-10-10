@@ -7,33 +7,11 @@ def f(x, y):
 
 def generate_grid():
     # Pedir al usuario la cantidad de valores para X y Y
-    n = int(input("Ingresa la cantidad de valores para X en el intervalo [-4,0]: "))
-    m = int(input("Ingresa la cantidad de valores para Y en el intervalo [-6,3]: "))
-    
-    # Pedir los puntos específicos para X e Y dentro de los intervalos
-    x_values = []
-    print(f"\nIngresa {n} valores para X en el intervalo [-4, 0]:")
-    for i in range(n):
-        x = float(input(f"Ingrese el valor {i+1} de X: "))
-        if -4 <= x <= 0:
-            x_values.append(x)
-        else:
-            print("Valor fuera de rango. Ingrese un valor entre [-4, 0].")
-            return
-    
-    y_values = []
-    print(f"\nIngresa {m} valores para Y en el intervalo [-6, 3]:")
-    for i in range(m):
-        y = float(input(f"Ingrese el valor {i+1} de Y: "))
-        if -6 <= y <= 3:
-            y_values.append(y)
-        else:
-            print("Valor fuera de rango. Ingrese un valor entre [-6, 3].")
-            return
+    n = int(input("Ingresa la cantidad de valores para X en el intervalo [-4,0] y para Y en el intervalo [-6,3]: "))
     
     # Convertir a numpy arrays
-    x_values = np.array(x_values)
-    y_values = np.array(y_values)
+    x_values = np.linspace(-4, 0, n)
+    y_values = np.linspace(-6, 3, n)
     
     # Crear la cuadrícula usando meshgrid
     X, Y = np.meshgrid(x_values, y_values)

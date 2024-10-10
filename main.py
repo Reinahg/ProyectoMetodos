@@ -8,7 +8,6 @@ if __name__ == "__main__":
     
     # Puntos de entrada
     x, y, z_real = generate_grid()
-    plot_grid(x,y)
     X, Y = np.meshgrid(x, y)
     plot_grid(X,Y)
     
